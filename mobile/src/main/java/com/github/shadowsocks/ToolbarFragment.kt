@@ -32,8 +32,8 @@ open class ToolbarFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         toolbar = view.findViewById(R.id.toolbar)
-        toolbar.setNavigationIcon(R.drawable.ic_navigation_menu)
-        toolbar.setNavigationOnClickListener { (activity as MainActivity).drawer.openDrawer(GravityCompat.START) }
+        //toolbar.setNavigationIcon(R.drawable.ic_navigation_menu)
+        //toolbar.setNavigationOnClickListener { (activity as MainActivity).drawer.openDrawer(GravityCompat.START) }
     }
 
     open fun onBackPressed(): Boolean = false

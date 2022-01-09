@@ -183,7 +183,7 @@ class ProfilesFragment : ToolbarFragment(), Toolbar.OnMenuItemClickListener, Sea
                 edit.visibility = View.GONE
                 subscription.visibility = View.VISIBLE
             } else {
-                edit.visibility = View.VISIBLE
+                edit.visibility = View.GONE
                 subscription.visibility = View.GONE
             }
         }
@@ -348,9 +348,9 @@ class ProfilesFragment : ToolbarFragment(), Toolbar.OnMenuItemClickListener, Sea
         toolbar.setTitle(R.string.profiles)
         toolbar.inflateMenu(R.menu.profile_manager_menu)
         toolbar.setOnMenuItemClickListener(this)
-        val searchView = toolbar.findViewById<SearchView>(R.id.action_search)
-        searchView.setOnQueryTextListener(this)
-        searchView.queryHint = getString(android.R.string.search_go)
+        //val searchView = toolbar.findViewById<SearchView>(R.id.action_search)
+        //searchView.setOnQueryTextListener(this)
+        //searchView.queryHint = getString(android.R.string.search_go)
 
         ProfileManager.ensureNotEmpty()
         profilesList = view.findViewById(R.id.list)
@@ -417,6 +417,7 @@ class ProfilesFragment : ToolbarFragment(), Toolbar.OnMenuItemClickListener, Sea
                 (activity as MainActivity).snackbar().setText(R.string.action_import_err).show()
                 true
             }
+            /*
             R.id.action_import_file -> {
                 startFilesForResult(importProfiles)
                 true
@@ -425,6 +426,7 @@ class ProfilesFragment : ToolbarFragment(), Toolbar.OnMenuItemClickListener, Sea
                 startFilesForResult(replaceProfiles)
                 true
             }
+            */
             R.id.action_manual_settings -> {
                 startConfig(ProfileManager.createProfile(
                         Profile().also { Core.currentProfile?.main?.copyFeatureSettingsTo(it) }))

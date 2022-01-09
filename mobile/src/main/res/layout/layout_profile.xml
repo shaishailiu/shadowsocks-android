@@ -54,6 +54,7 @@
             android:contentDescription="@string/edit"
             android:focusable="true"
             android:padding="12dp"
+            android:visibility="gone"
             app:srcCompat="@drawable/ic_image_edit"/>
 
         <androidx.appcompat.widget.AppCompatImageView
@@ -66,6 +67,7 @@
             android:focusable="true"
             android:nextFocusLeft="@+id/container"
             android:padding="12dp"
+            android:visibility="invisible"
             app:srcCompat="@drawable/ic_social_share"/>
     </LinearLayout>
 
